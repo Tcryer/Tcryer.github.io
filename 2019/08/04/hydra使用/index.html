@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="WTF&#39;blog">
 <meta property="og:description" content="hydra参数详解-R：继续从上一次进度接着破解-S：大写，采用SSL链接">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-04T09:09:24.891Z">
+<meta property="og:updated_time" content="2019-08-04T09:11:25.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hydra使用">
 <meta name="twitter:description" content="hydra参数详解-R：继续从上一次进度接着破解-S：大写，采用SSL链接">
@@ -176,8 +176,8 @@
       
         <p>hydra参数详解<br>-R：继续从上一次进度接着破解<br>-S：大写，采用SSL链接</p>
 <a id="more"></a>
-<p>-s <port>：小写，可通过这个参数指定非默认端口<br>-l <login>：指定破解的用户，对特定用户破解<br>-L <file>：指定用户名字典<br>-p <pass>：小写，指定密码破解，少用，一般是采用密码字典<br>-P <file>：大写，指定密码字典<br>-e <ns>：可选选项，n：空密码试探，s：使用指定用户和密码试探<br>-C <file>：使用冒号分割格式，例如“登录名:密码”来代替-L/-P参数<br>-M <file>：指定目标列表文件一行一条<br>-o <file>：指定结果输出文件<br>-f：在使用-M参数以后，找到第一对登录名或者密码的时候中止破解<br>-t <tasks>：同时运行的线程数，默认为16<br>-w <time>：设置最大超时的时间，单位秒，默认是30s<br>-v / -V：显示详细过程<br>-o 可导出文件</time></tasks></file></file></file></ns></file></pass></file></login></port></p>
-<h2 id="server：目标ip"><a href="#server：目标ip" class="headerlink" title="server：目标ip "></a>server：目标ip </h2><p>hydra -L ./user.txt -P ./pass.txt -t 2 -e n -f -v -s 3306 192.168.0.57 mysql<br>爆破mysql</p>
+<p>-s <port>：小写，可通过这个参数指定非默认端口<br>-l <login>：指定破解的用户，对特定用户破解<br>-L <file>：指定用户名字典<br>-p <pass>：小写，指定密码破解，少用，一般是采用密码字典<br>-P <file>：大写，指定密码字典<br>-e <ns>：可选选项，n：空密码试探，s：使用指定用户和密码试探<br>-C <file>：使用冒号分割格式，例如“登录名:密码”来代替-L/-P参数<br>-M <file>：指定目标列表文件一行一条<br>-o <file>：指定结果输出文件<br>-f：在使用-M参数以后，找到第一对登录名或者密码的时候中止破解<br>-t <tasks>：同时运行的线程数，默认为16<br>-w <time>：设置最大超时的时间，单位秒，默认是30s<br>-v / -V：显示详细过程<br>-o 可导出文件<br>server：目标ip </time></tasks></file></file></file></ns></file></pass></file></login></port></p>
+<p>hydra -L ./user.txt -P ./pass.txt -t 2 -e n -f -v -s 3306 192.168.0.57 mysql<br>爆破mysql</p>
 
       
 
