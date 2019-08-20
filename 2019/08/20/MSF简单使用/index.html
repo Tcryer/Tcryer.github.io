@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hydra使用 | WTF&#39;blog</title>
+  <title>MSF简单使用 | WTF&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hydra参数详解-R：继续从上一次进度接着破解-S：大写，采用SSL链接">
+  <meta name="description" content="MSF常用命令Help 帮助Back 返回? 查看命令帮助Show 列出所有Show payload 列出所有攻击载荷Search name 搜索Info 展示出指定渗透攻击或模块的相关信息Use 选择一个渗透攻击或模块 1.打开MSF2.选择模块 use name3.查看模块需要哪些信息 show op4.告诉MSF所需的信息 set 变量 值5.你要告诉MSF 入侵 之后 你要他的CMD  或">
 <meta name="keywords" content="工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hydra使用">
-<meta property="og:url" content="http://yoursite.com/2019/08/04/hydra使用/index.html">
+<meta property="og:title" content="MSF简单使用">
+<meta property="og:url" content="http://yoursite.com/2019/08/20/MSF简单使用/index.html">
 <meta property="og:site_name" content="WTF&#39;blog">
-<meta property="og:description" content="hydra参数详解-R：继续从上一次进度接着破解-S：大写，采用SSL链接">
+<meta property="og:description" content="MSF常用命令Help 帮助Back 返回? 查看命令帮助Show 列出所有Show payload 列出所有攻击载荷Search name 搜索Info 展示出指定渗透攻击或模块的相关信息Use 选择一个渗透攻击或模块 1.打开MSF2.选择模块 use name3.查看模块需要哪些信息 show op4.告诉MSF所需的信息 set 变量 值5.你要告诉MSF 入侵 之后 你要他的CMD  或">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-20T02:48:12.586Z">
+<meta property="og:updated_time" content="2019-08-20T11:41:50.686Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hydra使用">
-<meta name="twitter:description" content="hydra参数详解-R：继续从上一次进度接着破解-S：大写，采用SSL链接">
+<meta name="twitter:title" content="MSF简单使用">
+<meta name="twitter:description" content="MSF常用命令Help 帮助Back 返回? 查看命令帮助Show 列出所有Show payload 列出所有攻击载荷Search name 搜索Info 展示出指定渗透攻击或模块的相关信息Use 选择一个渗透攻击或模块 1.打开MSF2.选择模块 use name3.查看模块需要哪些信息 show op4.告诉MSF所需的信息 set 变量 值5.你要告诉MSF 入侵 之后 你要他的CMD  或">
   
     <link rel="alternative" href="/atom.xml" title="WTF&#39;blog" type="application/atom+xml">
   
@@ -155,30 +155,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hydra使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-MSF简单使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      hydra使用
+      MSF简单使用
     </h1>
   
 
         
-        <a href="/2019/08/04/hydra使用/" class="archive-article-date">
-  	<time datetime="2019-08-04T09:04:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
+        <a href="/2019/08/20/MSF简单使用/" class="archive-article-date">
+  	<time datetime="2019-08-20T11:40:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>hydra参数详解<br>-R：继续从上一次进度接着破解<br>-S：大写，采用SSL链接</p>
-<a id="more"></a>
-<p>-s <port>：小写，可通过这个参数指定非默认端口<br>-l <login>：指定破解的用户，对特定用户破解<br>-L <file>：指定用户名字典<br>-p <pass>：小写，指定密码破解，少用，一般是采用密码字典<br>-P <file>：大写，指定密码字典<br>-e <ns>：可选选项，n：空密码试探，s：使用指定用户和密码试探<br>-C <file>：使用冒号分割格式，例如“登录名:密码”来代替-L/-P参数<br>-M <file>：指定目标列表文件一行一条<br>-o <file>：指定结果输出文件<br>-f：在使用-M参数以后，找到第一对登录名或者密码的时候中止破解<br>-t <tasks>：同时运行的线程数，默认为16<br>-w <time>：设置最大超时的时间，单位秒，默认是30s<br>-v / -V：显示详细过程<br>-o 可导出文件<br>server：目标ip </time></tasks></file></file></file></ns></file></pass></file></login></port></p>
-<p>hydra -L ./user.txt -P ./pass.txt -t 2 -e n -f -v -s 3306 192.168.0.57 mysql<br>爆破mysql</p>
+        <p>MSF常用命令<br>Help 帮助<br>Back 返回<br>? 查看命令帮助<br>Show 列出所有<br>Show payload 列出所有攻击载荷<br>Search name 搜索<br>Info 展示出指定渗透攻击或模块的相关信息<br>Use 选择一个渗透攻击或模块</p>
+<p>1.打开MSF<br>2.选择模块 use name<br>3.查看模块需要哪些信息 show op<br>4.告诉MSF所需的信息 set 变量 值<br>5.你要告诉MSF 入侵 之后 你要他的CMD  或者 什么都不做 我就想执行一条命令 但是后面我还想控制<br>6.Set payload name 选择其中一个payload<br>7.启动 run</p>
+<p>Show targers 列出渗透攻击所支持的目标平台</p>
+<p>payload名称命名规则：<br>_find_tag:在一个已建立的连接上<br>_reverse_tcp:反向连接到攻击者主机<br>bind_tcp:监听一个tcp连接<br>reverse_http：反向连接 通过HTTP隧道</p>
 
       
 
@@ -269,7 +269,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/04/hydra使用/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/20/MSF简单使用/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +283,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/20/XSS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          XSS
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/30/googlehacking/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">googlehacking</div>
+    <a href="/2019/08/20/SQL注入/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SQL注入</div>
       <i class="icon-circle-right"></i>
     </a>
   
