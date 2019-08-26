@@ -77,6 +77,30 @@
 <ul>
     <li><div class="all active">全部文章<small>(9)</small></div></li>
     
+        
+            
+            <li><div data-rel="工具">工具<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="漏洞">漏洞<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="信息收集">信息收集<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -104,7 +128,7 @@
     <div class="friends-content">
         <ul>
             
-            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            <li><a target="_blank" href="https:www.chabug.org">ChaBug安全</a></li>
             
         </ul>
     </div>
@@ -139,7 +163,7 @@
     
     <nav id="title-list-nav">
         
-        <a  class=""
+        <a  class="工具 "
            href="/2019/08/20/MSF简单使用/"
            data-tag="工具"
            data-author="" >
@@ -147,15 +171,7 @@
             <span class="post-date" title="2019-08-20 19:40:19">2019/08/20</span>
         </a>
         
-        <a  class=""
-           href="/2019/08/20/SQL注入/"
-           data-tag="漏洞"
-           data-author="" >
-            <span class="post-title" title="SQL注入">SQL注入</span>
-            <span class="post-date" title="2019-08-20 19:36:19">2019/08/20</span>
-        </a>
-        
-        <a  class=""
+        <a  class="工具 "
            href="/2019/07/25/SQLmap学习笔记/"
            data-tag="工具"
            data-author="" >
@@ -163,7 +179,15 @@
             <span class="post-date" title="2019-07-25 00:00:00">2019/07/25</span>
         </a>
         
-        <a  class=""
+        <a  class="漏洞 "
+           href="/2019/08/20/SQL注入/"
+           data-tag="漏洞"
+           data-author="" >
+            <span class="post-title" title="SQL注入">SQL注入</span>
+            <span class="post-date" title="2019-08-20 19:36:19">2019/08/20</span>
+        </a>
+        
+        <a  class="漏洞 "
            href="/2019/08/20/XSS/"
            data-tag="漏洞"
            data-author="" >
@@ -171,7 +195,7 @@
             <span class="post-date" title="2019-08-20 19:31:24">2019/08/20</span>
         </a>
         
-        <a  class=""
+        <a  class="信息收集 "
            href="/2019/07/30/googlehacking/"
            data-tag="信息收集"
            data-author="" >
@@ -179,7 +203,7 @@
             <span class="post-date" title="2019-07-30 11:28:52">2019/07/30</span>
         </a>
         
-        <a  class=""
+        <a  class="工具 "
            href="/2019/08/04/hydra使用/"
            data-tag="工具"
            data-author="" >
@@ -187,7 +211,7 @@
             <span class="post-date" title="2019-08-04 17:04:36">2019/08/04</span>
         </a>
         
-        <a  class=""
+        <a  class="工具 "
            href="/2019/07/26/nmap基础命令/"
            data-tag="工具"
            data-author="" >
@@ -195,7 +219,7 @@
             <span class="post-date" title="2019-07-26 11:00:14">2019/07/26</span>
         </a>
         
-        <a  class=""
+        <a  class="漏洞 "
            href="/2019/08/21/上传漏洞/"
            data-tag="漏洞"
            data-author="" >
@@ -203,7 +227,7 @@
             <span class="post-date" title="2019-08-21 14:48:34">2019/08/21</span>
         </a>
         
-        <a  class=""
+        <a  class="信息收集 "
            href="/2019/08/24/信息收集/"
            data-tag="信息收集"
            data-author="" >
@@ -231,6 +255,12 @@
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="漏洞">漏洞</a>
+            
+        </span>
+        
         
         <span class="tag">
             
@@ -241,7 +271,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-20 19:45:18'>2019-08-20 19:36</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-26 16:42:11'>2019-08-20 19:36</time>
         
     </div>
     <div class="article-meta">
@@ -298,23 +328,11 @@ sleep（）  休眠</code></pre><p>魔术引号<br> magic_quotes_gpc 本特性�
 <p>普通联合注入和盲注区别<br>普通注入：效率高 兼容性差<br>盲注：效率低 兼容性高<br>基于时间延长注入<br>Sleep()延时<br>If(条件,真,假)条件判断<br>Mid(str,1,1) 截取<br>Ord ascii()<br>Length()<br>获取数据库名长度<br><a href="http://127.0.0.1/sql/0.php?id=1" target="_blank" rel="noopener">http://127.0.0.1/sql/0.php?id=1</a> and sleep(if((select length(database()) = 7),0,5))<br>获取表名<br>Union select 1,2,3 sleep(if(length(table_name) = 4,0,5)) from information_schema.tables where table_schema =database() limit 0,1</p>
 
       
-       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1312681577@qq.com </span>
     </div>
 </article>
 
 
-
-<div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>SQL注入</p>
-    
-    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="WTF">WTF</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-20, 19:36:19</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-20, 19:45:18</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/20/SQL注入/" title="SQL注入">http://yoursite.com/2019/08/20/SQL注入/</a>
-    <p>
-        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-    </p>
-</div>
 
 
 
