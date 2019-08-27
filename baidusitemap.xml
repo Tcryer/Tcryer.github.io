@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://wtf-god.github.io/2019/08/24/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</loc>
+    <loc>http://yoursite.com/child/2019/08/24/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</loc>
     <lastmod>2019-08-27</lastmod>
   </url>  <url>
-    <loc>https://wtf-god.github.io/2019/07/30/googlehacking/</loc>
+    <loc>http://yoursite.com/child/2019/07/30/googlehacking/</loc>
     <lastmod>2019-08-27</lastmod>
   </url>  <url>
-    <loc>https://wtf-god.github.io/2019/08/04/hydra%E4%BD%BF%E7%94%A8/</loc>
+    <loc>http://yoursite.com/child/2019/08/04/hydra%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2019-08-26</lastmod>
   </url>  <url>
-    <loc>https://wtf-god.github.io/2019/08/21/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</loc>
+    <loc>http://yoursite.com/child/2019/08/21/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</loc>
     <lastmod>2019-08-26</lastmod>
   </url>  <url>
-    <loc>https://wtf-god.github.io/2019/08/20/XSS/</loc>
+    <loc>http://yoursite.com/child/2019/08/20/XSS/</loc>
     <lastmod>2019-08-26</lastmod>
   </url>  <url>
-    <loc>https://wtf-god.github.io/2019/08/20/SQL%E6%B3%A8%E5%85%A5/</loc>
+    <loc>http://yoursite.com/child/2019/08/20/SQL%E6%B3%A8%E5%85%A5/</loc>
     <lastmod>2019-08-26</lastmod>
   </url>  <url>
-    <loc>https://wtf-god.github.io/2019/07/25/SQLmap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://yoursite.com/child/2019/07/25/SQLmap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2019-08-26</lastmod>
   </url>  <url>
-    <loc>https://wtf-god.github.io/2019/08/20/MSF%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</loc>
+    <loc>http://yoursite.com/child/2019/08/20/MSF%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2019-08-26</lastmod>
   </url>  <url>
-    <loc>https://wtf-god.github.io/2019/07/26/nmap%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</loc>
+    <loc>http://yoursite.com/child/2019/07/26/nmap%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2019-08-26</lastmod>
   </url>
 </urlset>
