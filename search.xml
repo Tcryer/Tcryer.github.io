@@ -83,7 +83,7 @@
       <link href="/2019/08/20/MSF%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
       <url>/2019/08/20/MSF%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
       
-        <content type="html"><![CDATA[<p>MSF常用命令</p><a id="more"></a><p>Help 帮助<br>Back 返回<br>? 查看命令帮助<br>Show 列出所有<br>Show payload 列出所有攻击载荷<br>Search name 搜索<br>Info 展示出指定渗透攻击或模块的相关信息<br>Use 选择一个渗透攻击或模块</p><p>1.打开MSF<br>2.选择模块 use name<br>3.查看模块需要哪些信息 show op<br>4.告诉MSF所需的信息 set 变量 值<br>5.你要告诉MSF 入侵 之后 你要他的CMD  或者 什么都不做 我就想执行一条命令 但是后面我还想控制<br>6.Set payload name 选择其中一个payload<br>7.启动 run</p><p>Show targers 列出渗透攻击所支持的目标平台</p><p>payload名称命名规则：<br>_find_tag:在一个已建立的连接上<br>_reverse_tcp:反向连接到攻击者主机<br>bind_tcp:监听一个tcp连接<br>reverse_http：反向连接 通过HTTP隧道</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="MSF常用命令"><a href="#MSF常用命令" class="headerlink" title="MSF常用命令"></a>MSF常用命令</h2><a id="more"></a><p>Help 帮助<br>Back 返回<br>? 查看命令帮助<br>Show 列出所有<br>Show payload 列出所有攻击载荷<br>Search name 搜索<br>Info 展示出指定渗透攻击或模块的相关信息<br>Use 选择一个渗透攻击或模块</p><p>1.打开MSF<br>2.选择模块 use name<br>3.查看模块需要哪些信息 show op<br>4.告诉MSF所需的信息 set 变量 值<br>5.你要告诉MSF 入侵 之后 你要他的CMD  或者 什么都不做 我就想执行一条命令 但是后面我还想控制<br>6.Set payload name 选择其中一个payload<br>7.启动 run</p><p>Show targers 列出渗透攻击所支持的目标平台</p><p>payload名称命名规则：<br>_find_tag:在一个已建立的连接上<br>_reverse_tcp:反向连接到攻击者主机<br>bind_tcp:监听一个tcp连接<br>reverse_http：反向连接 通过HTTP隧道</p>]]></content>
       
       
       <categories>
@@ -133,7 +133,7 @@
       <link href="/2019/08/20/XSS/"/>
       <url>/2019/08/20/XSS/</url>
       
-        <content type="html"><![CDATA[<p>XSS原理：输出问题导致的js代码被识别执行</p><a id="more"></a><p>Xss技术分类<br>反射型（非持久型）<br>存储型（持久型）<br>DOM型<br>Xss常见攻击<br>Xss漏洞发现并利用<br>Beef使用<br>Cookie维持权限应用<br>条件<br>1.已经获得网站webshell权限<br>2.网站后台目录文件有可写权限<br>利用原理<br>通过修改后台登录成功指向文件,利用js代码获取每次登录成功的cookie(管理员权限)<br>Xss相关防护过滤及绕过分析<br>防护：<br>1.关键字过滤<br>2.特殊符号过滤<br>3.字符长度过滤<br>4.转义编码防护<br>绕过：<br>1.改变大小写<br>2.使用空白符<br>3.HEX编码<br>4.其他标签调用<br>5.Js自带函数</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="XSS原理：输出问题导致的js代码被识别执行"><a href="#XSS原理：输出问题导致的js代码被识别执行" class="headerlink" title="XSS原理：输出问题导致的js代码被识别执行"></a>XSS原理：输出问题导致的js代码被识别执行</h2><a id="more"></a><h3 id="Xss技术分类"><a href="#Xss技术分类" class="headerlink" title="Xss技术分类"></a>Xss技术分类</h3><p>反射型（非持久型）<br>存储型（持久型）<br>DOM型</p><h3 id="Xss常见攻击"><a href="#Xss常见攻击" class="headerlink" title="Xss常见攻击"></a>Xss常见攻击</h3><p>盗取Cookie<br>Xss漏洞发现并利用<br>Beef使用</p><h3 id="Cookie维持权限应用"><a href="#Cookie维持权限应用" class="headerlink" title="Cookie维持权限应用"></a>Cookie维持权限应用</h3><p>条件<br>1.已经获得网站webshell权限<br>2.网站后台目录文件有可写权限<br>利用原理<br>通过修改后台登录成功指向文件,利用js代码获取每次登录成功的cookie(管理员权限)</p><h2 id="Xss相关防护过滤及绕过分析"><a href="#Xss相关防护过滤及绕过分析" class="headerlink" title="Xss相关防护过滤及绕过分析"></a>Xss相关防护过滤及绕过分析</h2><h3 id="防护："><a href="#防护：" class="headerlink" title="防护："></a>防护：</h3><p>1.关键字过滤<br>2.特殊符号过滤<br>3.字符长度过滤<br>4.转义编码防护</p><h3 id="绕过："><a href="#绕过：" class="headerlink" title="绕过："></a>绕过：</h3><p>1.改变大小写<br>2.使用空白符<br>3.HEX编码<br>4.其他标签调用<br>5.Js自带函数</p>]]></content>
       
       
       <categories>
@@ -158,7 +158,7 @@
       <link href="/2019/08/04/hydra%E4%BD%BF%E7%94%A8/"/>
       <url>/2019/08/04/hydra%E4%BD%BF%E7%94%A8/</url>
       
-        <content type="html"><![CDATA[<p>hydra参数详解<br>-R：继续从上一次进度接着破解<br>-S：大写，采用SSL链接</p><a id="more"></a><p>-s <port>：小写，可通过这个参数指定非默认端口<br>-l <login>：指定破解的用户，对特定用户破解<br>-L <file>：指定用户名字典<br>-p <pass>：小写，指定密码破解，少用，一般是采用密码字典<br>-P <file>：大写，指定密码字典<br>-e <ns>：可选选项，n：空密码试探，s：使用指定用户和密码试探<br>-C <file>：使用冒号分割格式，例如“登录名:密码”来代替-L/-P参数<br>-M <file>：指定目标列表文件一行一条<br>-o <file>：指定结果输出文件<br>-f：在使用-M参数以后，找到第一对登录名或者密码的时候中止破解<br>-t <tasks>：同时运行的线程数，默认为16<br>-w <time>：设置最大超时的时间，单位秒，默认是30s<br>-v / -V：显示详细过程<br>-o 可导出文件<br>server：目标ip </time></tasks></file></file></file></ns></file></pass></file></login></port></p><p>hydra -L ./user.txt -P ./pass.txt -t 2 -e n -f -v -s 3306 192.168.0.57 mysql<br>爆破mysql</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="hydra参数详解"><a href="#hydra参数详解" class="headerlink" title="hydra参数详解"></a>hydra参数详解</h2><p>-R：继续从上一次进度接着破解<br>-S：大写，采用SSL链接</p><a id="more"></a><p>-s <port>：小写，可通过这个参数指定非默认端口<br>-l <login>：指定破解的用户，对特定用户破解<br>-L <file>：指定用户名字典<br>-p <pass>：小写，指定密码破解，少用，一般是采用密码字典<br>-P <file>：大写，指定密码字典<br>-e <ns>：可选选项，n：空密码试探，s：使用指定用户和密码试探<br>-C <file>：使用冒号分割格式，例如“登录名:密码”来代替-L/-P参数<br>-M <file>：指定目标列表文件一行一条<br>-o <file>：指定结果输出文件<br>-f：在使用-M参数以后，找到第一对登录名或者密码的时候中止破解<br>-t <tasks>：同时运行的线程数，默认为16<br>-w <time>：设置最大超时的时间，单位秒，默认是30s<br>-v / -V：显示详细过程<br>-o 可导出文件<br>server：目标ip </time></tasks></file></file></file></ns></file></pass></file></login></port></p><p>hydra -L ./user.txt -P ./pass.txt -t 2 -e n -f -v -s 3306 192.168.0.57 mysql<br>爆破mysql</p>]]></content>
       
       
       <categories>
@@ -208,7 +208,7 @@
       <link href="/2019/07/26/nmap%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
       <url>/2019/07/26/nmap%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
       
-        <content type="html"><![CDATA[<p>tips:不定时更新，边学变更新</p><h2 id="iL"><a href="#iL" class="headerlink" title="-iL"></a>-iL</h2><p>扫文本<br>nmap -iL test.txt</p><a id="more"></a><h2 id="–exclude"><a href="#–exclude" class="headerlink" title="–exclude"></a>–exclude</h2><p>排除IP<br>nmap 192.168.0.* –exclue 192.168.0.1</p><h2 id="sA"><a href="#sA" class="headerlink" title="-sA"></a>-sA</h2><p>是否开防火墙</p><p>检测主机在线<br>-sP</p><h2 id="p"><a href="#p" class="headerlink" title="-p"></a>-p</h2><p>只扫描哪些端口</p><p>-sS<br>半开扫描</p><p>-T4<br>级别越高，速度越快</p><p>-A<br>全面系统检测、启用脚本检测、扫描等</p><p>-v<br>显示扫描过程</p><p>Nmap探测WAF有两种脚本，<br>一种是http-waf-detect，命令：nmap -p80,443 –script=http-waf-detect ip<br>一种是http-waf-fingerprint。命令：nmap -p80,443 –script=http-waf-fingerprint ip</p>]]></content>
+        <content type="html"><![CDATA[<p>tips:不定时更新，边学变更新</p><h2 id="iL"><a href="#iL" class="headerlink" title="-iL"></a>-iL</h2><p>扫文本<br>nmap -iL test.txt</p><a id="more"></a><h2 id="–exclude"><a href="#–exclude" class="headerlink" title="–exclude"></a>–exclude</h2><p>排除IP<br>nmap 192.168.0.* –exclue 192.168.0.1</p><h2 id="sA"><a href="#sA" class="headerlink" title="-sA"></a>-sA</h2><p>是否开防火墙</p><h2 id="sP"><a href="#sP" class="headerlink" title="-sP"></a>-sP</h2><p>检测主机在线</p><h2 id="p"><a href="#p" class="headerlink" title="-p"></a>-p</h2><p>只扫描哪些端口</p><h2 id="sS"><a href="#sS" class="headerlink" title="-sS"></a>-sS</h2><p>半开扫描</p><h2 id="T4"><a href="#T4" class="headerlink" title="-T4"></a>-T4</h2><p>级别越高，速度越快</p><h2 id="A"><a href="#A" class="headerlink" title="-A"></a>-A</h2><p>全面系统检测、启用脚本检测、扫描等</p><h2 id="v"><a href="#v" class="headerlink" title="-v"></a>-v</h2><p>显示扫描过程</p><h2 id="Nmap探测WAF有两种脚本，"><a href="#Nmap探测WAF有两种脚本，" class="headerlink" title="Nmap探测WAF有两种脚本，"></a>Nmap探测WAF有两种脚本，</h2><p>一种是http-waf-detect，命令：nmap -p80,443 –script=http-waf-detect ip<br>一种是http-waf-fingerprint。命令：nmap -p80,443 –script=http-waf-fingerprint ip</p>]]></content>
       
       
       <categories>
