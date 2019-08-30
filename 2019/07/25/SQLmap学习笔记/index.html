@@ -55,14 +55,14 @@
 </script>
 
   <meta name="description" content="SQLmap学习笔记–常用参数-u 检测注入python sqlmap.py -u “127.0.0.1/sql/0.php?id=1”">
-<meta name="keywords" content="工具">
+<meta name="keywords" content="SQLmap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLmap学习笔记">
 <meta property="og:url" content="http://yoursite.com/child/2019/07/25/SQLmap学习笔记/index.html">
 <meta property="og:site_name" content="WTF&#39;blog">
 <meta property="og:description" content="SQLmap学习笔记–常用参数-u 检测注入python sqlmap.py -u “127.0.0.1/sql/0.php?id=1”">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T08:42:02.671Z">
+<meta property="og:updated_time" content="2019-08-30T04:17:08.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLmap学习笔记">
 <meta name="twitter:description" content="SQLmap学习笔记–常用参数-u 检测注入python sqlmap.py -u “127.0.0.1/sql/0.php?id=1”">
@@ -305,7 +305,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 16:42:02" itemprop="dateModified" datetime="2019-08-26T16:42:02+08:00">2019-08-26</time>
+                <time title="修改时间：2019-08-30 12:17:08" itemprop="dateModified" datetime="2019-08-30T12:17:08+08:00">2019-08-30</time>
               </span>
             
           
@@ -356,21 +356,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>SQLmap学习笔记<br>–常用参数<br>-u 检测注入<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1”</p>
+        <h2 id="SQLmap学习笔记"><a href="#SQLmap学习笔记" class="headerlink" title="SQLmap学习笔记"></a>SQLmap学习笔记</h2><h3 id="–常用参数"><a href="#–常用参数" class="headerlink" title="–常用参数"></a>–常用参数</h3><h4 id="u-检测注入"><a href="#u-检测注入" class="headerlink" title="-u 检测注入"></a>-u 检测注入</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1”</p>
 <a id="more"></a>
-<p>–data 针对POST请求的链接<br>python sqlmap.py -u “127.0.0.1/sql/0.php” –data=”id=1”</p>
-<p>–forms 检测表单是否存在注入<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –forms</p>
-<p>–level 等级 1-5<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –level 3</p>
-<p>–dbs 列出所有库<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –dbs</p>
-<p>–current-db 列出当前库<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –current-db</p>
-<p>–tables -D”” 指定库里的所有表<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –tables -D”saltest”</p>
-<p>–tables 所有表<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –tables</p>
-<p>–dump -T”” -D”” -C”” 指定列下的字段<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –dump -T”news” -D “sqltest” -C”id”</p>
-<p>–current-user 当前用户名<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –current-user</p>
-<p>–os-shell 打开一个终端<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –os-shell</p>
-<p>-m 扫描文本里的地址<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” -m “绝对路径”</p>
-<p>-l 通过burp的日志文件检测注入<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” -l “文件路径”</p>
-<p>–tamper=”” Tamper脚本运用<br>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –tamper=”between.py”</p>
+<h4 id="–data-针对POST请求的链接"><a href="#–data-针对POST请求的链接" class="headerlink" title="–data 针对POST请求的链接"></a>–data 针对POST请求的链接</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php” –data=”id=1”</p>
+<h4 id="–forms-检测表单是否存在注入"><a href="#–forms-检测表单是否存在注入" class="headerlink" title="–forms 检测表单是否存在注入"></a>–forms 检测表单是否存在注入</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –forms</p>
+<h4 id="–level-等级-1-5"><a href="#–level-等级-1-5" class="headerlink" title="–level 等级 1-5"></a>–level 等级 1-5</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –level 3</p>
+<h4 id="–dbs-列出所有库"><a href="#–dbs-列出所有库" class="headerlink" title="–dbs 列出所有库"></a>–dbs 列出所有库</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –dbs</p>
+<h4 id="–current-db-列出当前库"><a href="#–current-db-列出当前库" class="headerlink" title="–current-db 列出当前库"></a>–current-db 列出当前库</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –current-db</p>
+<h4 id="–tables-D””-指定库里的所有表"><a href="#–tables-D””-指定库里的所有表" class="headerlink" title="–tables -D”” 指定库里的所有表"></a>–tables -D”” 指定库里的所有表</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –tables -D”saltest”</p>
+<h4 id="–tables-所有表"><a href="#–tables-所有表" class="headerlink" title="–tables 所有表"></a>–tables 所有表</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –tables</p>
+<h4 id="–dump-T””-D””-C””-指定列下的字段"><a href="#–dump-T””-D””-C””-指定列下的字段" class="headerlink" title="–dump -T”” -D”” -C”” 指定列下的字段"></a>–dump -T”” -D”” -C”” 指定列下的字段</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –dump -T”news” -D “sqltest” -C”id”</p>
+<h4 id="–current-user-当前用户名"><a href="#–current-user-当前用户名" class="headerlink" title="–current-user 当前用户名"></a>–current-user 当前用户名</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –current-user</p>
+<h4 id="–os-shell-打开一个终端"><a href="#–os-shell-打开一个终端" class="headerlink" title="–os-shell 打开一个终端"></a>–os-shell 打开一个终端</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –os-shell</p>
+<h4 id="m-扫描文本里的地址"><a href="#m-扫描文本里的地址" class="headerlink" title="-m 扫描文本里的地址"></a>-m 扫描文本里的地址</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” -m “绝对路径”</p>
+<h4 id="l-通过burp的日志文件检测注入"><a href="#l-通过burp的日志文件检测注入" class="headerlink" title="-l 通过burp的日志文件检测注入"></a>-l 通过burp的日志文件检测注入</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” -l “文件路径”</p>
+<h4 id="–tamper-””-Tamper脚本运用"><a href="#–tamper-””-Tamper脚本运用" class="headerlink" title="–tamper=”” Tamper脚本运用"></a>–tamper=”” Tamper脚本运用</h4><p>python sqlmap.py -u “127.0.0.1/sql/0.php?id=1” –tamper=”between.py”</p>
 
     </div>
 
@@ -386,7 +386,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/工具/" rel="tag"># 工具</a>
+              <a href="/tags/SQLmap/" rel="tag"># SQLmap</a>
             
           </div>
         
@@ -456,6 +456,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLmap学习笔记"><span class="nav-number">1.</span> <span class="nav-text">SQLmap学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#–常用参数"><span class="nav-number">1.1.</span> <span class="nav-text">–常用参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-检测注入"><span class="nav-number">1.1.1.</span> <span class="nav-text">-u 检测注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#–data-针对POST请求的链接"><span class="nav-number">1.1.2.</span> <span class="nav-text">–data 针对POST请求的链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#–forms-检测表单是否存在注入"><span class="nav-number">1.1.3.</span> <span class="nav-text">–forms 检测表单是否存在注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#–level-等级-1-5"><span class="nav-number">1.1.4.</span> <span class="nav-text">–level 等级 1-5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#–dbs-列出所有库"><span class="nav-number">1.1.5.</span> <span class="nav-text">–dbs 列出所有库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#–current-db-列出当前库"><span class="nav-number">1.1.6.</span> <span class="nav-text">–current-db 列出当前库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#–tables-D””-指定库里的所有表"><span class="nav-number">1.1.7.</span> <span class="nav-text">–tables -D”” 指定库里的所有表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#–tables-所有表"><span class="nav-number">1.1.8.</span> <span class="nav-text">–tables 所有表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#–dump-T””-D””-C””-指定列下的字段"><span class="nav-number">1.1.9.</span> <span class="nav-text">–dump -T”” -D”” -C”” 指定列下的字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#–current-user-当前用户名"><span class="nav-number">1.1.10.</span> <span class="nav-text">–current-user 当前用户名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#–os-shell-打开一个终端"><span class="nav-number">1.1.11.</span> <span class="nav-text">–os-shell 打开一个终端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#m-扫描文本里的地址"><span class="nav-number">1.1.12.</span> <span class="nav-text">-m 扫描文本里的地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#l-通过burp的日志文件检测注入"><span class="nav-number">1.1.13.</span> <span class="nav-text">-l 通过burp的日志文件检测注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#–tamper-””-Tamper脚本运用"><span class="nav-number">1.1.14.</span> <span class="nav-text">–tamper=”” Tamper脚本运用</span></a></li></ol></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -469,7 +471,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -511,7 +513,17 @@
         
           
         
-        <span class="site-state-item-count">3</span>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
