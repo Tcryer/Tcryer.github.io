@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="WTF&#39;blog">
 <meta property="og:description" content="MSF常用命令">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-30T06:38:54.265Z">
+<meta property="og:updated_time" content="2019-09-08T08:10:00.362Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MSF简单使用">
 <meta name="twitter:description" content="MSF常用命令">
@@ -305,7 +305,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-30 14:38:54" itemprop="dateModified" datetime="2019-08-30T14:38:54+08:00">2019-08-30</time>
+                <time title="修改时间：2019-09-08 16:10:00" itemprop="dateModified" datetime="2019-09-08T16:10:00+08:00">2019-09-08</time>
               </span>
             
           
@@ -358,9 +358,9 @@
       
         <h2 id="MSF常用命令"><a href="#MSF常用命令" class="headerlink" title="MSF常用命令"></a>MSF常用命令</h2><a id="more"></a>
 <p>Help 帮助<br>Back 返回<br>? 查看命令帮助<br>Show 列出所有<br>Show payload 列出所有攻击载荷<br>Search name 搜索<br>Info 展示出指定渗透攻击或模块的相关信息<br>Use 选择一个渗透攻击或模块</p>
-<p>1.打开MSF<br>2.选择模块 use name<br>3.查看模块需要哪些信息 show op<br>4.告诉MSF所需的信息 set 变量 值<br>5.你要告诉MSF 入侵 之后 你要他的CMD  或者 什么都不做 我就想执行一条命令 但是后面我还想控制<br>6.Set payload name 选择其中一个payload<br>7.启动 run</p>
+<h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><p>1.打开MSF<br>2.选择模块 use name<br>3.查看模块需要哪些信息 show op<br>4.告诉MSF所需的信息 set 变量 值<br>5.你要告诉MSF 入侵 之后 你要他的CMD  或者 什么都不做 我就想执行一条命令 但是后面我还想控制<br>6.Set payload name 选择其中一个payload<br>7.启动 run</p>
 <p>Show targers 列出渗透攻击所支持的目标平台</p>
-<p>payload名称命名规则：<br>_find_tag:在一个已建立的连接上<br>_reverse_tcp:反向连接到攻击者主机<br>bind_tcp:监听一个tcp连接<br>reverse_http：反向连接 通过HTTP隧道</p>
+<p>拓展：<br>payload名称命名规则：<br>_find_tag:在一个已建立的连接上<br>_reverse_tcp:反向连接到攻击者主机<br>bind_tcp:监听一个tcp连接<br>reverse_http：反向连接 通过HTTP隧道</p>
 
     </div>
 
@@ -450,7 +450,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MSF常用命令"><span class="nav-number">1.</span> <span class="nav-text">MSF常用命令</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MSF常用命令"><span class="nav-number">1.</span> <span class="nav-text">MSF常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本流程"><span class="nav-number">2.</span> <span class="nav-text">基本流程</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -720,12 +720,12 @@ NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
     notify: false,
     appId: 'WSndgVgSmb5jBDiTRGXr7cae-gzGzoHsz',
     appKey: 'C2brhSbHCnv9VSmvIgbl9pKF',
-    placeholder: 'Just go go',
+    placeholder: '看都看了，不留下点什么？',
     avatar: 'mm',
     meta: guest,
     pageSize: '10' || 10,
     visitor: false,
-    lang: '' || 'zh-cn',
+    lang: 'zh-cn' || 'zh-cn',
     path: location.pathname
   });
 }, window.Valine);
