@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/child/categories/index.html</loc>
+    
+    <lastmod>2019-09-13T06:26:10.567Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/child/guestbook/index.html</loc>
     
-    <lastmod>2019-09-13T06:22:01.712Z</lastmod>
+    <lastmod>2019-09-13T06:25:53.110Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/child/tags/index.html</loc>
+    
+    <lastmod>2019-09-13T06:25:37.794Z</lastmod>
     
   </url>
   
@@ -75,20 +89,6 @@
     <loc>http://yoursite.com/child/2019/08/24/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</loc>
     
     <lastmod>2019-08-30T04:04:32.395Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/child/categories/index.html</loc>
-    
-    <lastmod>2019-08-27T02:03:54.394Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/child/tags/index.html</loc>
-    
-    <lastmod>2019-08-27T02:01:35.751Z</lastmod>
     
   </url>
   
